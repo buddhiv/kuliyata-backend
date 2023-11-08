@@ -1,0 +1,15 @@
+user
+
+get all users - GET /users
+get user - GET /user/:id
+save user - POST - /user
+update user - PATCH - /user/:id
+delete user - DELETE /user/:id
+
+product
+get all products - GET /products
+get product - GET /product/:id ✅
+save product - POST - /product 
+update product - PATCH - /product/:id
+delete product - DELETE /product/:id
+
