@@ -33,9 +33,9 @@ public class Product {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "created_by")
+    @JoinColumn(name = "created_by", nullable = false)
     private User createdBy;
-    
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 

@@ -12,13 +12,15 @@ public class DistrictRepositoryTest {
     @Autowired
     private DistrictRepository districtRepository;
 
+    @Autowired
+    private ProvinceRepository provinceRepository;
+
     @Test
     void saveDistrict() {
         District district = new District();
         district.setName("Galle");
-        
-        Province province = new Province();
-        province.setId(1L);
+
+        Province province = provinceRepository.findById(1L).get();
         district.setProvince(province);
 
         District savedDistrict = districtRepository.save(district);

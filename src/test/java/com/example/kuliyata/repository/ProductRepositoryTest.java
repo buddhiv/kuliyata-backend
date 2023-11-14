@@ -10,8 +10,15 @@ import com.example.kuliyata.entity.User;
 
 @SpringBootTest
 public class ProductRepositoryTest {
+
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private DistrictRepository districtRepository;
 
     @Test
     void saveProduct() {
@@ -20,12 +27,10 @@ public class ProductRepositoryTest {
         product.setTitle("Rubik Cube");
         product.setDescription("6 Sided Rubik Cube");
 
-        District district = new District();
-        district.setId(1L);
+        District district = districtRepository.findByName("Galle");
         product.setDistrict(district);
 
-        User user = new User();
-        user.setId(1L);
+        User user = userRepository.findById(1L).get();
         product.setCreatedBy(user);
 
         Product savedProduct = productRepository.save(product);

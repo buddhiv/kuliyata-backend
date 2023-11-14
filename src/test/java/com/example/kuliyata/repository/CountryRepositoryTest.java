@@ -20,7 +20,8 @@ public class CountryRepositoryTest {
         Country savedCountry = countryRepository.save(country);
         System.out.println(savedCountry.getId());
         System.out.println(savedCountry.toString());
+
+        System.out.println("new");
     }
 
-    
 }

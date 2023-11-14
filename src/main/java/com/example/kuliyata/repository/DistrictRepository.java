@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.kuliyata.entity.District;
 
-public interface DistrictRepository extends JpaRepository<District, Long>{
-    
+public interface DistrictRepository extends JpaRepository<District, Long> {
+
+    District findByName(String name);
 }
